@@ -1,7 +1,207 @@
-My Personal Website
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teo Jun Cheng | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
-    
-        Hello, World! 👋
-        Welcome to my GitHub Pages website.
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #334155;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #334155;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+            padding-top: 1rem;
+            border-top: 1px solid #334155;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Intro -->
+        <header>
+            <h1>Teo Jun Cheng</h1>
+            <p class="subtitle">Software Developer / Engineer</p>
+            <p class="bio">
+                Passionate software developer focusing on building web and mobile applications. 
+                Constantly learning new technologies and crafting tools that solve real-world problems.
+            </p>
+        </header>
+
+        <!-- Tech Stack -->
+        <section>
+            <h2>Tech Stack</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">Laravel</span>
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">Dart</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>ServeTogether</h3>
+                    <p>A web-based volunteer management system designed to streamline volunteer engagement and event operations.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/teojuncheng" target="_blank">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Personal Finance Tracker</h3>
+                    <p>A customized application for tracking multi-category daily expenses, budget metrics, and financial reporting.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/teojuncheng" target="_blank">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Automated Valuation Engine</h3>
+                    <p>A data-driven quantitative stock screening tool built for analyzing asset valuation models and parameters.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/teojuncheng" target="_blank">View Code &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer / Contact -->
+        <footer>
+            <p>Connect with me on <a href="https://github.com/teojuncheng" target="_blank">GitHub</a> | Built with GitHub Pages</p>
+        </footer>
+    </div>
+
+</body>
+</html>
