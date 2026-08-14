@@ -3,479 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teo Jun Cheng | Junior Software Engineer</title>
+    <title>Teo Jun Cheng | Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #38bdf8;
-            --accent-hover: #0284c7;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Header / Hero */
-        header {
-            margin-bottom: 3.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        h1 {
-            font-size: 2.75rem;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            color: var(--accent-color);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .bio {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 750px;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: #0f172a;
-            border: none;
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            color: #ffffff;
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 3.5rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background-color: var(--border-color);
-            margin-left: 0.5rem;
-        }
-
-        /* Experience & Timeline */
-        .timeline-item {
-            position: relative;
-            padding-left: 1.5rem;
-            border-left: 2px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 0.25rem;
-        }
-
-        .role-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .timeline-date {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            font-weight: 500;
-        }
-
-        .company-name {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .timeline-bullets {
-            list-style-type: disc;
-            padding-left: 1.25rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .timeline-bullets li {
-            margin-bottom: 0.4rem;
-        }
-
-        /* Projects Grid */
-        .projects-grid {
+        .hero {
+            padding: 5rem 0 3rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
         }
 
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-color);
-        }
-
-        .project-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.25rem;
-        }
-
-        .project-meta {
-            font-size: 0.8rem;
-            color: var(--accent-color);
-            margin-bottom: 0.75rem;
-        }
-
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: auto;
-        }
-
-        .mini-tag {
-            font-size: 0.75rem;
-            background-color: #0f172a;
-            color: var(--text-muted);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        /* Tech Stack */
-        .skills-category {
-            margin-bottom: 1.25rem;
-        }
-
-        .skills-category h3 {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            border: 1px solid var(--border-color);
-        }
-
-        /* Education Card */
-        .edu-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .edu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
-
-        .edu-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 0.25rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
+        .hero-img-container {
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
         }
 
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
+        .hero-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 0 25px var(--accent-glow);
+            object-fit: cover;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-val {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .current-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .current-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="brand">&lt;TeoJunCheng /&gt;</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <!-- Header / Summary -->
-        <header>
-            <div class="header-top">
-                <div>
-                    <h1>Teo Jun Cheng</h1>
-                    <p class="subtitle">Junior Software Engineer</p>
-                </div>
-            </div>
-            <p class="bio">
-                Final-year Software Engineering student with proven experience in full-stack web and mobile development. 
-                Passionate about building scalable, decoupled applications and leveraging modern frameworks to solve complex problems. 
-                <strong>Available for full-time opportunities starting September 2026.</strong>
-            </p>
-            <div class="contact-links">
-                <a href="mailto:teojuncheng11@gmail.com" class="btn btn-primary">✉️ Email Me</a>
-                <a href="https://linkedin.com/in/teo-jun-cheng" target="_blank" class="btn">🔗 LinkedIn</a>
-                <a href="https://github.com/teojuncheng" target="_blank" class="btn">💻 GitHub</a>
-                <span class="btn">📍 Kuala Lumpur</span>
-            </div>
-        </header>
-
-        <!-- Experience -->
-        <section>
-            <h2>Work Experience</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="role-title">Software Engineer Intern</div>
-                    <div class="timeline-date">Mar 2026 – Aug 2026</div>
-                </div>
-                <div class="company-name">Apploqic Technologies | Kuala Lumpur</div>
-                <ul class="timeline-bullets">
-                    <li>Developing a decoupled cross-platform mobile application utilizing a Flutter frontend and Laravel backend API, ensuring efficient data synchronization and state management.</li>
-                    <li>Maintained and optimized the L Éden and Dksolutions websites utilizing WordPress, Elementor, Divi Builder, and cPanel environments.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section>
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <div>
-                        <div class="project-title">Personalised Volunteer System</div>
-                        <div class="project-meta">Final Year Project | Mar 2025 – Feb 2026</div>
-                        <p class="project-desc">Designed and implemented a functional web-based volunteer management platform with an interest-based recommendation engine for opportunity matching.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="mini-tag">PHP</span>
-                        <span class="mini-tag">MySQL</span>
-                        <span class="mini-tag">JavaScript</span>
-                        <span class="mini-tag">HTML5/CSS3</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div>
-                        <div class="project-title">AI Sales Chatbot</div>
-                        <div class="project-meta">UM Hackathon | Apr 2025</div>
-                        <p class="project-desc">Developed an AI Chatbot prototype to boost shop sales by leveraging Grab datasets. Trained ML models on sales history to recommend high-value products.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="mini-tag">Python</span>
-                        <span class="mini-tag">Machine Learning</span>
-                        <span class="mini-tag">Data Analysis</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div>
-                        <div class="project-title">VRolecule VR Simulation</div>
-                        <div class="project-meta">Digital Innovation Creativepreneur | Aug 2025</div>
-                        <p class="project-desc">Developed an interactive VR simulation illustrating the complete water cycle and molecular state changes using Unity.</p>
-                    </div>
-                    <div class="project-tags">
-                        <span class="mini-tag">Unity</span>
-                        <span class="mini-tag">C#</span>
-                        <span class="mini-tag">VR</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Technical Skills -->
-        <section>
-            <h2>Skills & Technologies</h2>
-            
-            <div class="skills-category">
-                <h3>Languages</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">Dart</span>
-                    <span class="skill-tag">Kotlin</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">Java</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Frameworks & Libraries</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Laravel</span>
-                    <span class="skill-tag">Flutter</span>
-                    <span class="skill-tag">Tailwind CSS</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Jetpack Compose</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Databases & Tools</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">WordPress</span>
-                    <span class="skill-tag">Elementor / Divi</span>
-                    <span class="skill-tag">cPanel</span>
-                    <span class="skill-tag">Unity</span>
-                    <span class="skill-tag">Git</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education & Achievements -->
-        <section>
-            <h2>Education & Honors</h2>
-            <div class="edu-card">
-                <div class="edu-header">
-                    <div class="edu-title">Universiti Malaysia Sabah</div>
-                    <div class="timeline-date">Oct 2022 – Aug 2026</div>
-                </div>
-                <div class="company-name">Bachelor of Computer Science with Honours (Software Engineering)</div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    <strong>Current CGPA:</strong> 3.74
+        <!-- Hero Section -->
+        <section class="hero">
+            <div>
+                <div class="section-prefix">// HELLO, WORLD</div>
+                <h1>Hi, I'm <span style="color: var(--accent-blue);">Teo Jun Cheng</span></h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                    Full-stack software developer building scalable web and mobile solutions.
                 </p>
-                <div class="badge">🏆 6x Consecutive Dean's List Award Recipient</div>
-                
-                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
-                    <p><strong>Programs & Activities:</strong> Hotlink Campus Ambassador (2024/2025), K-Youth Development Programme, Robotic Club Committee Member.</p>
+                <p style="color: var(--text-muted); max-width: 600px;">
+                    Final-year Software Engineering student passionate about decoupled architecture, modern frameworks, and problem-solving. Available for full-time opportunities starting September 2026.
+                </p>
+                <div class="btn-group">
+                    <a href="projects.html" class="btn btn-primary">View Projects</a>
+                    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
                 </div>
+            </div>
+            <div class="hero-img-container">
+                <!-- Replace avatar placeholder with your photo file in github -->
+                <img src="https://via.placeholder.com/220" alt="Teo Jun Cheng" class="hero-img">
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>© 2026 Teo Jun Cheng. Hosted on <a href="https://github.com/teojuncheng/teojuncheng.github.io" target="_blank">GitHub Pages</a>.</p>
-        </footer>
+        <!-- Quick Stats Cards -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-val">3.74</div>
+                <div class="stat-label">Current CGPA</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">6x</div>
+                <div class="stat-label">Dean's List Award</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-val stat-val">Kuala Lumpur</div>
+                <div class="stat-label">Based In</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" style="color: #4ade80;">Open</div>
+                <div class="stat-label">To Full-Time Roles</div>
+            </div>
+        </section>
+
+        <!-- Current Status -->
+        <section>
+            <div class="section-prefix">// STATUS UPDATE</div>
+            <h2>Currently</h2>
+            <div class="current-grid">
+                <div class="current-card">
+                    <div class="section-prefix">STUDYING</div>
+                    <h3 style="color:#fff; margin-bottom:0.5rem;">BCompSc. Software Engineering at UMS</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Final Year • Graduating August 2026</p>
+                </div>
+                <div class="current-card">
+                    <div class="section-prefix">INTERNING AT</div>
+                    <h3 style="color:#fff; margin-bottom:0.5rem;">Apploqic Technologies</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Full-stack development with Flutter & Laravel API integration.</p>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Teo Jun Cheng • Built with HTML, CSS & Hosted on GitHub Pages</p>
+        </div>
+    </footer>
 
 </body>
 </html>
